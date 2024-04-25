@@ -1,19 +1,17 @@
 package com.dio.santanderopenacademy.useraccount;
+import com.dio.santanderopenacademy.operation.Operation;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.Random;
 
 
 public class UserAccount {
 
-    public static void createFile(String fullname, int balance) {
+    public static User createFile(String fullname, int balance) {
 
         String dirAccounts = "src/main/accounts";
 
@@ -21,7 +19,8 @@ public class UserAccount {
 
         if(new File(userAccount).exists()) {
             System.out.println("User already exists, please, enter another!");
-            return;
+            Operation operation = new Operation();
+            operation.menuOperation("","");
         }
 
         Random random = new Random();
@@ -39,8 +38,9 @@ public class UserAccount {
         try (FileWriter fileWriter = new FileWriter(dirAccounts + File.separator + filename + ".json")) {
             fileWriter.write(json);
 
-        }catch (Exception e) {
-            System.out.println(e.getMessage());
+            return user;
+        }catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }

@@ -12,5 +12,21 @@ public class User {
         this.balance = 0;
     }
 
+    public String getFullname() {
+        return fullname;
+    }
+
+    public String getNumberAccount() {
+        return numberAccount;
+    }
+
+    public String getNumberAgence() {
+        return numberAgence;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
 
 }

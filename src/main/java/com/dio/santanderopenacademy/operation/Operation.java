@@ -1,4 +1,5 @@
 package com.dio.santanderopenacademy.operation;
+import com.dio.santanderopenacademy.accountbank.AccountBank;
 import com.dio.santanderopenacademy.auth.Auth;
 import com.dio.santanderopenacademy.useraccount.UserAccount;
 import com.google.gson.Gson;
@@ -45,16 +46,16 @@ public class Operation {
                     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
                     String json = gson.toJson(user);
-                    System.out.println(json);
 
                     try {
                         FileWriter fileWriter = new FileWriter("src/main/accounts/" + fileAccount + ".json" );
                         fileWriter.write(json);
                         fileWriter.close();
+                        AccountBank accountBank = new AccountBank();
+                        accountBank.startMenu();
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
-
 
                 }
 
@@ -75,12 +76,13 @@ public class Operation {
                     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
                     String json = gson.toJson(user);
-                    System.out.println(json);
 
                     try {
                         FileWriter fileWriter = new FileWriter("src/main/accounts/" + fileAccount + ".json" );
                         fileWriter.write(json);
                         fileWriter.close();
+                        AccountBank accountBank = new AccountBank();
+                        accountBank.startMenu();
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e686c734-cd2b-4269-a155-c9a70bae1ad9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/operation/Operation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/accounts/0321321321.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/accounts/045545525.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/accounts/123123.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/accounts/12341234.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/Operation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/accountbank/AccountBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/accountbank/AccountBank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/auth/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/auth/Auth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/operation/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/operation/Operation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/useraccount/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/useraccount/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/useraccount/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/useraccount/UserAccount.java" afterDir="false" />
     </list>
