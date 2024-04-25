@@ -7,21 +7,27 @@ import java.io.FileWriter;
 
 public class UserAccount {
 
-    public static void createFile(String username, String cpf, String password) {
+    public static void createFile(String username, String cpf, String password, int balance) {
+
+        String pathDir = "src/main/accounts";
+        File directory = new File(pathDir);
+
+        String userAccountExists = pathDir + File.separator + cpf + ".json";
+
+        if(new File(userAccountExists).exists()) {
+            System.out.println("User already exists, please, enter another!");
+            return;
+        }
+
 
         User user = new User( username, cpf, password);
+        user.setBalance(balance);
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(user);
-        String pathDir = "src/main/accounts";
 
-        File directory = new File(pathDir);
 
-        if (!directory.exists()) {
-            directory.mkdir();
-        }
-
-        String fileName = pathDir + File.separator + user.cpf + ".json";
+        String fileName = pathDir + File.separator + cpf + ".json";
 
         try (FileWriter fileWriter = new FileWriter( fileName)) {
             fileWriter.write(json);
@@ -31,7 +37,21 @@ public class UserAccount {
 
     }
 
+    public static boolean readFile(String cpf) {
+
+        String pathDir = "src/main/accounts";
+        File directory = new File(pathDir);
+
+        String userAccountExists = pathDir + File.separator + cpf + ".json";
+
+        if(new File(userAccountExists).exists()) {
+            return true;
+        }
+
+        return false;
+    }
+
 //    public static void main(String[] args) {
-//        createFile("olivia dos santos conceicao", "01242576231", "lkSKLADHASDHuhasd");
+//        createFile("olivia dos santos conceicao", "0124564565", "lkSKLADHASDHuhasd",100);
 //    }
 }

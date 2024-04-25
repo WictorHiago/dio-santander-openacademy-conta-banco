@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e686c734-cd2b-4269-a155-c9a70bae1ad9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/auth/Auth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/accountbank/AccountBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/accountbank/AccountBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/useraccount/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/useraccount/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/useraccount/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/useraccount/UserAccount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints>
+      <file url="file://$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/useraccount/UserAccount.java" />
+    </disable_hints>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -23,7 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/Main.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/auth/Auth.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/useraccount/User.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/dio/santanderopenacademy/useraccount/UserAccount.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -42,6 +53,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.AccountBank.executor": "Run",
+    "Application.Auth.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.UserAccount.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",

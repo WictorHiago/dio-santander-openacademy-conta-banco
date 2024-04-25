@@ -43,38 +43,38 @@ public class AccountBank {
     }
 
     public void createAccount() {
-        System.out.println("Please enter your credentials:");
-        System.out.println("**** CPF: ****");
-        String cpfAccount = this.scanner.next();
-
-        System.out.println("**** Name: ****");
-        String nameAccount = this.scanner.next();
-        nameAccount += " " + this.scanner.nextLine();
-
-        System.out.println("**** Password: ****");
-        String passwordAccount = this.scanner.nextLine();
-
-        System.out.println("Your account has been created! Please, do not lose it!");
-        System.out.println("*** Create Account Successful! ***\n" + "Name: " + nameAccount + "\n" + "CPF: " + cpfAccount);
-
-        login();
+//        System.out.println("Please enter your credentials:");
+//        System.out.println("**** CPF: ****");
+//        String cpfAccount = this.scanner.next();
+//
+//        System.out.println("**** Name: ****");
+//        String nameAccount = this.scanner.next();
+//        nameAccount += " " + this.scanner.nextLine();
+//
+//        System.out.println("**** Password: ****");
+//        String passwordAccount = this.scanner.nextLine();
+//
+//        System.out.println("Your account has been created! Please, do not lose it!");
+//        System.out.println("*** Create Account Successful! ***\n" + "Name: " + nameAccount + "\n" + "CPF: " + cpfAccount);
+//
+//        login();
     }
 
     public void login() {
-        boolean authenticated = false;
-        System.out.println("**** Enter your credentials: ****");
-        System.out.println("**** CPF: ****");
-        String cpfAccount = this.scanner.next();
-        System.out.println("**** Password: ****");
-        String passwordAccount = this.scanner.next();
-        authenticated = true;
-        if (authenticated) {
-            System.out.println("**** Login Successful! ****");
-            menuOperation();
-
-        } else {
-            System.out.println("**** Login Failed! ****");
-        }
+//        boolean authenticated = false;
+//        System.out.println("**** Enter your credentials: ****");
+//        System.out.println("**** CPF: ****");
+//        String cpfAccount = this.scanner.next();
+//        System.out.println("**** Password: ****");
+//        String passwordAccount = this.scanner.next();
+//        authenticated = true;
+//        if (authenticated) {
+//            System.out.println("**** Login Successful! ****");
+//            menuOperation();
+//
+//        } else {
+//            System.out.println("**** Login Failed! ****");
+//        }
     }
 
     public void menuOperation() {
