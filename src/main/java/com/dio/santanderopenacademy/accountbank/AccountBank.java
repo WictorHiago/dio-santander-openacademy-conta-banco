@@ -1,5 +1,7 @@
 package com.dio.santanderopenacademy.accountbank;
 
+import com.dio.santanderopenacademy.auth.Auth;
+
 import java.util.Scanner;
 
 public class AccountBank {
@@ -20,20 +22,21 @@ public class AccountBank {
 
         try {
             int option = scanner.nextInt();
+             Auth auth = new Auth();
 
             switch (option) {
                 case 1:
-//                    System.out.println("Enter your credentials: ");
-                    createAccount();
+                    auth.login();
                     break;
                 case 2:
-                    System.out.println("Create an account: ");
+                    auth.register();
                     break;
                 case 3:
                     System.out.println("Goodbye!");
-                    break;
+                    System.exit(0);
                 default:
                     System.out.println("Invalid option");
+                    startMenu();
                     break;
             }
 
@@ -42,68 +45,33 @@ public class AccountBank {
         }
     }
 
-    public void createAccount() {
-//        System.out.println("Please enter your credentials:");
-//        System.out.println("**** CPF: ****");
-//        String cpfAccount = this.scanner.next();
+//    public void menuOperation() {
 //
-//        System.out.println("**** Name: ****");
-//        String nameAccount = this.scanner.next();
-//        nameAccount += " " + this.scanner.nextLine();
+//        System.out.println("**** What would you like to do? ****");
+//        System.out.println("1. Deposit");
+//        System.out.println("2. Withdraw");
+//        System.out.println("3. Transfer");
+//        System.out.println("4. Exit");
 //
-//        System.out.println("**** Password: ****");
-//        String passwordAccount = this.scanner.nextLine();
-//
-//        System.out.println("Your account has been created! Please, do not lose it!");
-//        System.out.println("*** Create Account Successful! ***\n" + "Name: " + nameAccount + "\n" + "CPF: " + cpfAccount);
-//
-//        login();
-    }
-
-    public void login() {
-//        boolean authenticated = false;
-//        System.out.println("**** Enter your credentials: ****");
-//        System.out.println("**** CPF: ****");
-//        String cpfAccount = this.scanner.next();
-//        System.out.println("**** Password: ****");
-//        String passwordAccount = this.scanner.next();
-//        authenticated = true;
-//        if (authenticated) {
-//            System.out.println("**** Login Successful! ****");
-//            menuOperation();
-//
-//        } else {
-//            System.out.println("**** Login Failed! ****");
+//        int option = this.scanner.nextInt();
+//        switch (option) {
+//            case 1:
+//                System.out.println("Deposit");
+//                break;
+//            case 2:
+//                System.out.println("Withdraw");
+//                break;
+//            case 3:
+//                System.out.println("Transfer");
+//                break;
+//            case 4:
+//                System.out.println("Goodbye!");
+//                break;
+//            default:
+//                System.out.println("Invalid option");
+//                break;
 //        }
-    }
-
-    public void menuOperation() {
-
-        System.out.println("**** What would you like to do? ****");
-        System.out.println("1. Deposit");
-        System.out.println("2. Withdraw");
-        System.out.println("3. Transfer");
-        System.out.println("4. Exit");
-
-        int option = this.scanner.nextInt();
-        switch (option) {
-            case 1:
-                System.out.println("Deposit");
-                break;
-            case 2:
-                System.out.println("Withdraw");
-                break;
-            case 3:
-                System.out.println("Transfer");
-                break;
-            case 4:
-                System.out.println("Goodbye!");
-                break;
-            default:
-                System.out.println("Invalid option");
-                break;
-        }
-    }
+//    }
 
     public static void main(String[] args) {
         AccountBank accountBank = new AccountBank();
