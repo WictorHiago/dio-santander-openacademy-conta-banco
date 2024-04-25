@@ -8,44 +8,47 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Random;
 
 
 public class UserAccount {
 
-    public static void createFile(String username, String cpf, String password, int balance) {
+    public static void createFile(String fullname, int balance) {
 
-        String pathDir = "src/main/accounts";
-        File directory = new File(pathDir);
+        String dirAccounts = "src/main/accounts";
 
-        String userAccountExists = pathDir + File.separator + cpf + ".json";
+        String userAccount = dirAccounts + File.separator + fullname + ".json";
 
-        if(new File(userAccountExists).exists()) {
+        if(new File(userAccount).exists()) {
             System.out.println("User already exists, please, enter another!");
             return;
         }
 
+        Random random = new Random();
 
-        User user = new User( username, cpf, password);
-        user.setBalance(balance);
+        String accountNumber = String.format("%04d", random.nextInt(9999) +1);
+        String agenceNumber = String.format("%04d", random.nextInt(9999) +1);
 
+        fullname = fullname.toUpperCase();
+        User user = new User(fullname, accountNumber, agenceNumber);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(user);
 
+        String filename = fullname.toUpperCase().replace(" ", "-") + "-" + accountNumber;
 
-        String fileName = pathDir + File.separator + cpf + ".json";
-
-        try (FileWriter fileWriter = new FileWriter(fileName)) {
+        try (FileWriter fileWriter = new FileWriter(dirAccounts + File.separator + filename + ".json")) {
             fileWriter.write(json);
+
         }catch (Exception e) {
-            System.out.println("An error occurred, pleas try again!");
+            System.out.println(e.getMessage());
         }
 
     }
 
-    public static JsonObject readFile(String cpf) {
+    public static JsonObject readFile(String fileAccount) {
 
-        String pathDir = "src/main/accounts";
-        File directory = new File(pathDir + File.separator + cpf + ".json");
+        String dirAccounts = "src/main/accounts";
+        File directory = new File( dirAccounts + File.separator + fileAccount + ".json");
 
         JsonObject userAccount;
         try (BufferedReader fileBuffer = new BufferedReader(new FileReader(directory))) {
@@ -59,28 +62,12 @@ public class UserAccount {
 
             Gson gson = new Gson();
             userAccount = gson.fromJson(contentFile.toString(), JsonObject.class);
-            // System.out.println( userAccount);
 
         }catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
-        return userAccount;
+        return userAccount; // return JSON user object
     }
 
-//    public static void main(String[] args) {
-//
-//        // Lendo e imprimindo os dados do arquivo
-//        JsonObject jsonObject = readFile("0321321321");
-//        if (jsonObject != null) {
-//            System.out.println("User account data:");
-//
-//        } else {
-//            System.out.println("Error reading user account data.");
-//        }
-//    }
-
-//    public static void main(String[] args) {
-//        createFile("wictor hiagoTest", "0321321321", "321",0);
-//    }
 }

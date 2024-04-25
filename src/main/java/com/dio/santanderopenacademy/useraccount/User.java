@@ -1,35 +1,16 @@
 package com.dio.santanderopenacademy.useraccount;
 
 public class User {
-    private String username;
-    private String cpf;
-    private String password;
+    private String fullname;
+    private String numberAccount;
+    private String numberAgence;
     private int balance;
-    public User ( String username, String cpf, String password) {
-        this.username = username;
-        this.cpf = cpf;
-        this.password = password;
+    public User ( String fullname, String numberAccount, String numberAgence) {
+        this.fullname = fullname;
+        this.numberAccount = numberAccount;
+        this.numberAgence = numberAgence;
         this.balance = 0;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public int getBalance() {
-        return balance;
-    }
-
-    public void setBalance(int balance) {
-        this.balance = balance;
-    }
 
 }

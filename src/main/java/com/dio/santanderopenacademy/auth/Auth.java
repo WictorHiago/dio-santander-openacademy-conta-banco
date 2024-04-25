@@ -1,5 +1,5 @@
 package com.dio.santanderopenacademy.auth;
-import com.dio.santanderopenacademy.Operation;
+import com.dio.santanderopenacademy.operation.Operation;
 import com.dio.santanderopenacademy.useraccount.UserAccount;
 import com.google.gson.JsonObject;
 
@@ -19,27 +19,25 @@ public class Auth {
 
     public void login() {
         System.out.println("**** Enter your credentials: ****");
-        System.out.println("**** CPF: ****");
-        String cpfAccount = this.scanner.next();
-        System.out.println("**** Password: ****");
-        String passwordAccount = this.scanner.next();
+        System.out.println("**** Account name: ****");
+        String fullname = this.scanner.nextLine().toUpperCase();
 
-        String userAccountExists = "src/main/accounts/" + cpfAccount + ".json";
+        System.out.println("**** Number account: ****");
+        String numberAccount = this.scanner.next();
 
-        if(new File(userAccountExists).exists()) {
-            JsonObject userAccount = UserAccount.readFile(cpfAccount);
+        String filename = fullname.toUpperCase().replace(" ", "-") + "-" + numberAccount;
 
-            if(userAccount.get("password").getAsString().equals(passwordAccount)) {
+        String fileAccount = "src/main/accounts/" + filename + ".json"; // fullpath
 
-                this.accountLogged = userAccount.get("username").getAsString();
+        if(new File(fileAccount).exists()) {
+            JsonObject userAccount = UserAccount.readFile(filename);
 
-                this.operation.menuOperation(this.accountLogged);
-                System.out.println("welcome " + this.accountLogged);
-
-            }else {
-                System.out.println("Not authorized, please, try again!");
-                this.operation.menuOperation("");
+            if(!userAccount.get("fullname").getAsString().equals(fullname)) {
+                System.out.println("Account not found, please try again!");
             }
+            this.accountLogged = fullname;
+            operation.menuOperation(this.accountLogged,filename);
+
         }else {
             System.out.println("Account not found, please try again!");
         }
@@ -47,26 +45,12 @@ public class Auth {
     }
 
     public void register() {
-        System.out.println("Please enter your credentials:");
-        System.out.println("**** CPF: ****");
-        String cpfAccount = this.scanner.next();
+        System.out.println("Enter your full name:");
+        String fullname = this.scanner.nextLine();
+        System.out.println(fullname);
 
-        System.out.println("**** Name: ****");
-        String nameAccount = this.scanner.next();
-        nameAccount += " " + this.scanner.nextLine();
-        nameAccount = nameAccount.toUpperCase();
-
-        System.out.println("**** Password: ****");
-        String passwordAccount = this.scanner.nextLine();
-
-        UserAccount.createFile(nameAccount, cpfAccount, passwordAccount, 0);
+        UserAccount.createFile(fullname, 0);
+        System.out.println("User account created successfully!");
     }
 
-
-//    public static void main(String[] args ) {
-//        Auth auth = new Auth();
-////        auth.login();
-//        auth.register();
-//
-//    }
 }

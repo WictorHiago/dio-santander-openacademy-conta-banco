@@ -45,34 +45,6 @@ public class AccountBank {
         }
     }
 
-//    public void menuOperation() {
-//
-//        System.out.println("**** What would you like to do? ****");
-//        System.out.println("1. Deposit");
-//        System.out.println("2. Withdraw");
-//        System.out.println("3. Transfer");
-//        System.out.println("4. Exit");
-//
-//        int option = this.scanner.nextInt();
-//        switch (option) {
-//            case 1:
-//                System.out.println("Deposit");
-//                break;
-//            case 2:
-//                System.out.println("Withdraw");
-//                break;
-//            case 3:
-//                System.out.println("Transfer");
-//                break;
-//            case 4:
-//                System.out.println("Goodbye!");
-//                break;
-//            default:
-//                System.out.println("Invalid option");
-//                break;
-//        }
-//    }
-
     public static void main(String[] args) {
         AccountBank accountBank = new AccountBank();
         accountBank.startMenu();
