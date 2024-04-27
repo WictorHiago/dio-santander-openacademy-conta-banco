@@ -13,16 +13,16 @@ public class AccountBank {
 
 
     public void startMenu () {
-        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Hello there! Welcome to our Bank. What would you like to do?");
         System.out.println("1. Enter your credentials");
         System.out.println("2. Create an account");
         System.out.println("3. Exit");
 
+        int option = this.scanner.nextInt();
+        Auth auth = new Auth();
+
         try {
-            int option = scanner.nextInt();
-             Auth auth = new Auth();
 
             switch (option) {
                 case 1:

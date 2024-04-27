@@ -34,14 +34,18 @@ public class Auth {
         if(new File(fileAccount).exists()) {
             JsonObject userAccount = UserAccount.readFile(filename);
 
-            if(!userAccount.get("fullname").getAsString().equals(fullname)) {
-                System.out.println("Account not found, please try again!");
+            if(!userAccount.get("fullname").getAsString().equals(fullname) || !userAccount.get("numberAccount").getAsString().equals(numberAccount)) {
+                System.out.println("Your credentials are incorrect, please try again!");
+                AccountBank accountBank = new AccountBank();
+                accountBank.startMenu();
             }
             this.accountLogged = fullname;
             operation.menuOperation(this.accountLogged,filename);
 
         }else {
             System.out.println("Account not found, please try again!");
+            AccountBank accountBank = new AccountBank();
+            accountBank.startMenu();
         }
 
     }
